@@ -1,0 +1,15 @@
+{
+  "name": "dt211gmoment2",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Alexander Hilding",
+  "license": "ISC",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
