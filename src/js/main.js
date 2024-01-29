@@ -111,7 +111,7 @@ searchEl.addEventListener('input', filterAndDisplayCourses);
 //Funktion som filtrerar kursdata baserat på inmatning från sökfält
 async function filterAndDisplayCourses() {
     //Omvandlar inmatning till små bokstäver
-    searchText = searchEl.value.toLowerCase();
+    let searchText = searchEl.value.toLowerCase();
     //Anropar funktion för att få kursdata
     let courses = await loadCourses();
 
