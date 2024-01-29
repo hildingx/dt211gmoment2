@@ -17,12 +17,20 @@
         </form>
 
         <table id="courseTable">
-            <tr>
-                <th id="tCode">Kurskod</th>
-                <th id="tName">Namn</th>
-                <th id="tProg">Progression</th>
-            </tr>
+                <thead>
+                    <tr>
+                        <th id="thCode">Kurskod</th>
+                        <th id="thId">Namn</th>
+                        <th id="thProg">Progression</th>
+                    </tr>
+                </thead>
+                <tbody id="courseList">
+                    <!-- Här skapar js tabellrader från fetch -->
+                </tbody>
         </table>
+        <div id="error">
+            <!-- Här skapar js felmeddelande -->
+        </div>
     </main>
 </body>
 </html>
