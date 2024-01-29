@@ -100,3 +100,27 @@ async function insertSortedTable(sortedData) {
         `;
     })
 }
+
+// -------------------------------------------------------------- SÖKNING --------------------------------------------------------------
+
+//Hämta sökinmatningsfält genom id't search
+const searchEl = document.getElementById("search");
+//Händelselyssnare för input i sökfältet. Vid input kör funktion filterAndDisplayCourses
+searchEl.addEventListener('input', filterAndDisplayCourses);
+
+//Funktion som filtrerar kursdata baserat på inmatning från sökfält
+async function filterAndDisplayCourses() {
+    //Omvandlar inmatning till små bokstäver
+    searchText = searchEl.value.toLowerCase();
+    //Anropar funktion för att få kursdata
+    let courses = await loadCourses();
+
+    //Filtrerar varje egenskap från course-objektet
+    const filteredCourses = courses.filter(course =>
+        course.code.toLowerCase().includes(searchText) ||
+        course.coursename.toLowerCase().includes(searchText) ||
+        course.progression.toLowerCase().includes(searchText)
+    );
+    //Kör funktion med filtrerad kursdata
+    insertSortedTable(filteredCourses);
+}
